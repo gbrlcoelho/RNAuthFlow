@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator()
 export const AuthStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name='Home' component={SignIn} />
+      <Stack.Screen options={{headerTitleAlign: 'center'}} name='Sign In' component={SignIn} />
     </Stack.Navigator>
   )
 }
