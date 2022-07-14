@@ -5,7 +5,7 @@ import {ButtonVariant} from './types'
 export const buttonPrimary: ButtonVariant = {
   enabled: {
     button: {
-      backgroundColor: '#550ab1',
+      backgroundColor: '#000',
     },
     title: {
       color: '#fff',
@@ -37,7 +37,7 @@ export const ButtonContainer = styled.TouchableOpacity`
   height: 60px;
 `
 export const ButtonTitle = styled.Text`
-  font-size: 20;
+  font-size: 17px;
   font-weight: bold;
   text-align: center;
 `
