@@ -1,10 +1,18 @@
 import React from 'react'
-import {Text, View} from 'react-native'
+import {Button} from '../../components/button'
+import {HomeText, HomeView} from './styles'
 
 export const Home = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-    </View>
+    <>
+      <HomeView top={50}>
+        <HomeText bold fontSize={17}>
+          This page is only visible to authenticated users
+        </HomeText>
+      </HomeView>
+      <HomeView flex={1}>
+        <Button onPress={() => {}}>SETTINGS</Button>
+      </HomeView>
+    </>
   )
 }
