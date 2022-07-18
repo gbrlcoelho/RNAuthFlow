@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface CoffstackAppTests : XCTestCase
+@interface RNAuthFlowTests : XCTestCase
 
 @end
 
-@implementation CoffstackAppTests
+@implementation RNAuthFlowTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
