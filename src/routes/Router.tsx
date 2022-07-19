@@ -1,10 +1,10 @@
 import {NavigationContainer} from '@react-navigation/native'
-import React, {useContext} from 'react'
-import {AuthContext} from '../contexts/Auth'
+import React from 'react'
+import {useAuth} from '../hooks/useAuth'
 import {AppStack} from './AppStack'
 import {AuthStack} from './AuthStack'
 
 export const Router = () => {
-  const authContext = useContext(AuthContext)
-  return <NavigationContainer>{authContext.authData ? <AppStack /> : <AuthStack />}</NavigationContainer>
+  const {authData} = useAuth()
+  return <NavigationContainer>{authData ? <AppStack /> : <AuthStack />}</NavigationContainer>
 }
