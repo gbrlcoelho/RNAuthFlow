@@ -10,9 +10,9 @@ export const SettingsScreen = () => {
           Settings
         </SettingsText>
       </SettingsView>
-      <SettingsView flex={1} top={200}>
+      <SettingsView flex={1}>
         <Button style={styles.buttonBackground} onPress={() => {}}>
-          Exit App
+          EXIT APP
         </Button>
       </SettingsView>
     </>
