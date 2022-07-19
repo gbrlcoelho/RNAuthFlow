@@ -1,8 +1,11 @@
+import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import {Button} from '../../components/button'
 import {HomeText, HomeView} from './styles'
 
 export const Home = () => {
+  const navigation = useNavigation()
+
   return (
     <>
       <HomeView top={50}>
@@ -11,7 +14,7 @@ export const Home = () => {
         </HomeText>
       </HomeView>
       <HomeView flex={1}>
-        <Button onPress={() => {}}>SETTINGS</Button>
+        <Button onPress={() => navigation.navigate('Settings')}>SETTINGS</Button>
       </HomeView>
     </>
   )
