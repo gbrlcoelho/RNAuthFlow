@@ -2,18 +2,20 @@ import React, {useState} from 'react'
 import {AndroidIcon, Container} from './styles'
 import {CustomInput} from '../../components/textInput'
 import {Button} from '../../components/button'
+import {useAuth} from '../../hooks/useAuth'
 
 export const SignIn = () => {
+  const {signIn} = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
   const appLog = () => {
     setLoading(true)
+    signIn(email, password)
     setTimeout(() => {
       setLoading(false)
     }, 3000)
-    clearTimeout
   }
 
   return (
