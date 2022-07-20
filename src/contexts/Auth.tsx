@@ -15,7 +15,14 @@ export const AuthProvider: React.FC<ChildrenProps> = ({children}) => {
       setAuth(auth)
       return auth
     } catch (error) {
-      Alert.alert(error.message, 'Try again!')
+      if (error instanceof Error) {
+        Alert.alert(error.message, 'Try again!')
+      }
+      return {
+        token: '',
+        email: '',
+        name: '',
+      }
     }
   }
 
