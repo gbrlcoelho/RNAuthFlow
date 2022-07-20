@@ -33,7 +33,7 @@ export const ButtonContainer = styled.TouchableOpacity`
   align-content: center;
   justify-content: center;
   width: 100%;
-  border-radius: 8;
+  border-radius: 8px;
   height: 60px;
 `
 export const ButtonTitle = styled.Text`
