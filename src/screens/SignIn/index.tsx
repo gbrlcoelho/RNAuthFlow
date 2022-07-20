@@ -21,7 +21,7 @@ export const SignIn = () => {
   return (
     <Container>
       <AndroidIcon name='logo-android' color={'#000'} size={90} />
-      <CustomInput placeholder='E-MAIL' value={email} onChangeText={setEmail} />
+      <CustomInput keyboardType='email-address' autoComplete='email' placeholder='E-MAIL' value={email} onChangeText={setEmail} />
       <CustomInput secureTextEntry placeholder='PASSWORD' value={password} onChangeText={setPassword} />
       <Button isLoading={loading} onPress={appLog}>
         LOGIN
