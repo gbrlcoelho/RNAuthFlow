@@ -6,5 +6,4 @@ export interface HomeViewProps {
 export interface BoldTextProps {
   bold?: boolean
   fontSize?: number
-  color?: string
 }
