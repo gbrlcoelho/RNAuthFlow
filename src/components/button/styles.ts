@@ -29,7 +29,7 @@ export const buttonPrimary: ButtonVariant = {
 
 export const ButtonContainer = styled.TouchableOpacity`
   padding: 16px;
-  background-color: ${(props) => (props.disabled ? buttonPrimary.disabled.button.backgroundColor : buttonPrimary.enabled.button.backgroundColor)};
+  background-color: ${(props) => (props.disabled ? buttonPrimary.disabled.button.backgroundColor : props.theme.colors.primary)};
   align-content: center;
   justify-content: center;
   width: 100%;
