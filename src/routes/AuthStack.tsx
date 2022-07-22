@@ -7,9 +7,12 @@ const Stack = createNativeStackNavigator()
 
 export const AuthStack = () => {
   const {colors} = useTheme()
+
   return (
-    <Stack.Navigator>
-      <Stack.Screen options={{headerTintColor: colors.onBackground, headerTitleAlign: 'center', headerStyle: {backgroundColor: colors.background}}} name='Sign In' component={SignIn} />
-    </Stack.Navigator>
+    <>
+      <Stack.Navigator>
+        <Stack.Screen options={{headerTintColor: colors.onBackground, headerTitleAlign: 'center', headerStyle: {backgroundColor: colors.background}}} name='Sign In' component={SignIn} />
+      </Stack.Navigator>
+    </>
   )
 }
