@@ -4,6 +4,7 @@ import {ChildrenProps} from '../contexts/types'
 import {ThemeProvider as ThemeProviderStyled} from 'styled-components/native'
 import {darkTheme} from './darkTheme'
 import {lightTheme} from './lightTheme'
+import {StatusBar} from 'react-native'
 
 export enum ThemeType {
   light = 'light',
@@ -26,7 +27,7 @@ export const ThemeProvider: React.FC<ChildrenProps> = ({children}) => {
   async function loadTheme() {
     const savedTheme = await AsyncStorage.getItem('@theme')
     if (savedTheme) {
-      setTheme(savedTheme)
+      setTheme(JSON.parse(savedTheme))
     }
   }
 
@@ -45,8 +46,13 @@ export const ThemeProvider: React.FC<ChildrenProps> = ({children}) => {
     loadTheme()
   }, [])
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
-      <ThemeProviderStyled theme={themes[theme]}>{children}</ThemeProviderStyled>
-    </ThemeContext.Provider>
+    <>
+      <ThemeContext.Provider value={{theme, toggleTheme}}>
+        <ThemeProviderStyled theme={themes[theme]}>
+          <StatusBar backgroundColor={theme === ThemeType.dark ? '#121212' : '#fff'} barStyle={theme === ThemeType.dark ? 'light-content' : 'dark-content'} />
+          {children}
+        </ThemeProviderStyled>
+      </ThemeContext.Provider>
+    </>
   )
 }
