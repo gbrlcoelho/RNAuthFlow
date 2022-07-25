@@ -6,4 +6,5 @@ export const lightTheme: DefaultTheme = {
     onBackground: '#121212',
     primary: '#001A33',
   },
+  actualTheme: 'light',
 }
