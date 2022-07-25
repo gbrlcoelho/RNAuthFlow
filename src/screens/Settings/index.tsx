@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {Button} from '../../components/button'
-import {CustomSwitch} from '../../components/switch'
 import {useAuth} from '../../hooks/useAuth'
 import {SettingsText, SettingsView} from './styles'
 
@@ -19,7 +18,6 @@ export const SettingsScreen = () => {
   return (
     <>
       <SettingsView flex={0.2}>
-        <CustomSwitch />
         <SettingsText bold fontSize={17}>
           Settings screen
         </SettingsText>

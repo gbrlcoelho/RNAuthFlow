@@ -6,4 +6,5 @@ export const darkTheme: DefaultTheme = {
     onBackground: '#fff',
     primary: '#00264B',
   },
+  actualTheme: 'dark',
 }

@@ -7,5 +7,6 @@ declare module 'styled-components' {
       onBackground: string
       primary: string
     }
+    actualTheme: string
   }
 }
