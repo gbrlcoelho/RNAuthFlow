@@ -4,6 +4,8 @@ import {CustomInput} from '../../components/textInput'
 import {Button} from '../../components/button'
 import {useAuth} from '../../hooks/useAuth'
 import {useTheme} from 'styled-components'
+import auth from '@react-native-firebase/auth'
+import {Link} from '../../components/link'
 
 export const SignIn = () => {
   const {colors} = useTheme()
@@ -11,6 +13,17 @@ export const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const signUp = () => {
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        console.log(`User: ${JSON.stringify(userCredential)}`)
+      })
+      .then((error) => {
+        console.log(error)
+      })
+  }
 
   const appLog = () => {
     setLoading(true)
@@ -29,6 +42,7 @@ export const SignIn = () => {
         <Button isLoading={loading} onPress={appLog}>
           LOGIN
         </Button>
+        <Link title='Sign Up' onPress={signUp} />
       </Container>
     </>
   )
