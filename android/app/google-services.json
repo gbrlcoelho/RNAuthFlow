@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482271931020",
+    "project_id": "rn-auth-flow",
+    "storage_bucket": "rn-auth-flow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482271931020:android:290ad940d4a070f12da9a9",
+        "android_client_info": {
+          "package_name": "com.RNAuthFlow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482271931020-bpl79nbid5ku9ko2u73c2f4hr77grodb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeh9JOUHK4i478XR3fKpsteEXh1sHN6hA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482271931020-bpl79nbid5ku9ko2u73c2f4hr77grodb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

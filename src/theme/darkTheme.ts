@@ -5,6 +5,7 @@ export const darkTheme: DefaultTheme = {
     background: '#121212',
     onBackground: '#fff',
     primary: '#00264B',
+    textColor: '#fff',
   },
   actualTheme: 'dark',
 }
