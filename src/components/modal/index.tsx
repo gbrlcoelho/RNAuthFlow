@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
-import {Modal, StyleSheet} from 'react-native'
+import {Modal, StyleSheet, Text} from 'react-native'
 import auth from '@react-native-firebase/auth'
 import {Button} from '../button'
 import {CustomInput} from '../textInput'
-import {ModalContainer, ModalFooter, ModalHeader, ModalText, ModalView} from './styles'
+import {CloseIcon, ConfirmPasswordText, ModalContainer, ModalHeader, ModalText, ModalView, TouchableIcon} from './styles'
 
-export const CustomModal = ({visible}: any) => {
+interface ModalProps {
+  visible: boolean
+  onClose: () => void
+}
+
+export const CustomModal = ({visible, onClose}: ModalProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
 
   const signUp = () => {
     auth()
@@ -20,24 +26,33 @@ export const CustomModal = ({visible}: any) => {
       })
   }
 
-  const checkInput = email === '' ? (password === '' ? true : false) : false
+  const checkInput = email === '' || password === '' || password != confirmPassword ? true : false
+
   return (
     <>
-      <Modal transparent visible={true}>
+      <Modal transparent visible={visible} onRequestClose={onClose} animationType='slide' statusBarTranslucent={true}>
         <ModalView>
           <ModalContainer style={style.boxShadow}>
             <ModalHeader>
+              <TouchableIcon onPress={onClose}>
+                <CloseIcon name='close' size={25} />
+              </TouchableIcon>
               <ModalText bold fontSize={18}>
                 SIGN UP
               </ModalText>
             </ModalHeader>
             <CustomInput keyboardType='email-address' autoComplete='email' placeholder='E-MAIL' value={email} onChangeText={setEmail} />
             <CustomInput secureTextEntry placeholder='PASSWORD' value={password} onChangeText={setPassword} />
-            <ModalFooter>
-              <Button disabled={checkInput} onPress={signUp}>
-                SIGN UP
-              </Button>
-            </ModalFooter>
+            <CustomInput secureTextEntry placeholder='CONFIRM PASSWORD' value={confirmPassword} onChangeText={setConfirmPassword} />
+            {confirmPassword.length > 1 && confirmPassword !== password && <ConfirmPasswordText>The passwords don't match, try again.</ConfirmPasswordText>}
+            <Button
+              disabled={checkInput}
+              onPress={() => {
+                signUp()
+                onClose()
+              }}>
+              SIGN UP
+            </Button>
           </ModalContainer>
         </ModalView>
       </Modal>

@@ -32,13 +32,13 @@ export const SignIn = () => {
         <Button isLoading={loading} onPress={appLog}>
           LOGIN
         </Button>
-        <CustomModal visible={openModal} />
         <Link
           title='Sign Up'
           onPress={() => {
             setOpenModal(true)
           }}
         />
+        <CustomModal visible={openModal} onClose={() => setOpenModal(!openModal)} />
       </Container>
     </>
   )
