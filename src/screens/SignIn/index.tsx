@@ -4,7 +4,6 @@ import {CustomInput} from '../../components/textInput'
 import {Button} from '../../components/button'
 import {useAuth} from '../../hooks/useAuth'
 import {useTheme} from 'styled-components'
-// import auth from '@react-native-firebase/auth'
 import {Link} from '../../components/link'
 import {CustomModal} from '../../components/modal'
 
@@ -15,17 +14,6 @@ export const SignIn = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [openModal, setOpenModal] = useState(false)
-
-  // const signUp = () => {
-  //   auth()
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((userCredential) => {
-  //       console.log(`User: ${JSON.stringify(userCredential)}`)
-  //     })
-  //     .then((error) => {
-  //       console.log(error)
-  //     })
-  // }
 
   const appLog = () => {
     setLoading(true)
