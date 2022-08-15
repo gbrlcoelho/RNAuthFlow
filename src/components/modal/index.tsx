@@ -4,11 +4,7 @@ import {Modal, StyleSheet} from 'react-native'
 import {Button} from '../button'
 import {CustomInput} from '../textInput'
 import {CloseIcon, ConfirmPasswordText, ModalContainer, ModalHeader, ModalText, ModalView, TouchableIcon} from './styles'
-
-interface ModalProps {
-  visible: boolean
-  onClose: () => void
-}
+import {ModalProps} from './types'
 
 export const CustomModal = ({visible, onClose}: ModalProps) => {
   const [email, setEmail] = useState('')
@@ -21,7 +17,7 @@ export const CustomModal = ({visible, onClose}: ModalProps) => {
       .then((userCredential) => {
         console.log(`User: ${JSON.stringify(userCredential)}`)
       })
-      .then((error) => {
+      .catch((error) => {
         console.log(error)
       })
   }
