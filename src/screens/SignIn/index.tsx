@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import {AndroidIcon, Container} from './styles'
-import {CustomInput} from '../../components/textInput'
-import {Button} from '../../components/button'
-import {useAuth} from '../../hooks/useAuth'
 import {useTheme} from 'styled-components'
+import {Button} from '../../components/button'
 import {Link} from '../../components/link'
 import {CustomModal} from '../../components/modal'
+import {CustomInput} from '../../components/textInput'
+import {useAuth} from '../../hooks/useAuth'
+import {AndroidIcon, Container} from './styles'
 
 export const SignIn = () => {
   const {colors} = useTheme()

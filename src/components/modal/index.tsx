@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {Modal, StyleSheet, Text} from 'react-native'
 import auth from '@react-native-firebase/auth'
+import React, {useState} from 'react'
+import {Modal, StyleSheet} from 'react-native'
 import {Button} from '../button'
 import {CustomInput} from '../textInput'
 import {CloseIcon, ConfirmPasswordText, ModalContainer, ModalHeader, ModalText, ModalView, TouchableIcon} from './styles'
@@ -26,7 +26,7 @@ export const CustomModal = ({visible, onClose}: ModalProps) => {
       })
   }
 
-  const checkInput = email === '' || password === '' || password != confirmPassword ? true : false
+  const checkInput = email === '' || password === '' || password !== confirmPassword ? true : false
 
   return (
     <>
