@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native'
 import styled from 'styled-components/native'
-import {HomeViewProps, BoldTextProps} from '../Home/types'
+import {BoldTextProps, HomeViewProps} from '../Home/types'
 
 export const SettingsView = styled.View<HomeViewProps>`
   flex: ${(props) => (props.flex ? props.flex : 'none')};
@@ -12,7 +12,7 @@ export const SettingsView = styled.View<HomeViewProps>`
 `
 export const SettingsText = styled.Text<BoldTextProps>`
   font-weight: ${(props) => (props.bold ? 'bold' : 'none')};
-  font-size: ${(props) => (props.fontSize ? props.fontSize : 10)};
+  font-size: ${(props) => (props.fontSize ? props.fontSize : 10)}px;
   color: ${(props) => props.theme.colors.onBackground};
 `
 export const styles = StyleSheet.create({

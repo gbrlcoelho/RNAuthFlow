@@ -11,6 +11,6 @@ export const HomeView = styled.View<HomeViewProps>`
 `
 export const HomeText = styled.Text<BoldTextProps>`
   font-weight: ${(props) => (props.bold ? 'bold' : 'none')};
-  font-size: ${(props) => (props.fontSize ? props.fontSize : 10)};
+  font-size: ${(props) => (props.fontSize ? props.fontSize : 10)}px;
   color: ${(props) => props.theme.colors.onBackground};
 `
