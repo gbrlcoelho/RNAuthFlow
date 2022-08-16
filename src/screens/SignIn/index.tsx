@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import {AndroidIcon, Container} from './styles'
-import {CustomInput} from '../../components/textInput'
-import {Button} from '../../components/button'
-import {useAuth} from '../../hooks/useAuth'
 import {useTheme} from 'styled-components'
-import auth from '@react-native-firebase/auth'
-import {Link} from '../../components/link'
+import {Button} from '../../components/button'
+import {Link} from '../../components/link/index'
+import {CustomModal} from '../../components/modal'
+import {CustomInput} from '../../components/textInput'
+import {useAuth} from '../../hooks/useAuth'
+import {AndroidIcon, Container} from './styles'
 
 export const SignIn = () => {
   const {colors} = useTheme()
@@ -13,24 +13,14 @@ export const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
-
-  const signUp = () => {
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        console.log(`User: ${JSON.stringify(userCredential)}`)
-      })
-      .then((error) => {
-        console.log(error)
-      })
-  }
+  const [openModal, setOpenModal] = useState(false)
 
   const appLog = () => {
     setLoading(true)
     signIn(email, password)
     setTimeout(() => {
       setLoading(false)
-    }, 3000)
+    }, 4000)
   }
 
   return (
@@ -42,7 +32,13 @@ export const SignIn = () => {
         <Button isLoading={loading} onPress={appLog}>
           LOGIN
         </Button>
-        <Link title='Sign Up' onPress={signUp} />
+        <Link
+          title='Sign Up'
+          onPress={() => {
+            setOpenModal(true)
+          }}
+        />
+        <CustomModal visible={openModal} onClose={() => setOpenModal(!openModal)} />
       </Container>
     </>
   )
