@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useTheme} from 'styled-components'
 import {Button} from '../../components/button'
-import {Link} from '../../components/link'
+import {Link} from '../../components/link/index'
 import {CustomModal} from '../../components/modal'
 import {CustomInput} from '../../components/textInput'
 import {useAuth} from '../../hooks/useAuth'
@@ -20,7 +20,7 @@ export const SignIn = () => {
     signIn(email, password)
     setTimeout(() => {
       setLoading(false)
-    }, 3000)
+    }, 4000)
   }
 
   return (

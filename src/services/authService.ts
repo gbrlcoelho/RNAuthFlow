@@ -1,18 +1,18 @@
+import auth from '@react-native-firebase/auth'
 import {AuthData} from '../contexts/types'
 
 async function signIn(email: string, password: string): Promise<AuthData> {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (password === '123456') {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() =>
         resolve({
-          token: 'fake-token',
+          token: '',
           email,
-          name: 'Gabriel Coelho',
-        })
-      } else {
-        reject(new Error('Invalid credentials'))
-      }
-    }, 500)
+          name: '',
+        }),
+      )
+      .catch((error) => reject(new Error(`Invalid credentials ${error}`)))
   })
 }
 
